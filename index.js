@@ -38,8 +38,9 @@ function manMove(){
 }
 
 var space = 32;
+var fd = 0;
 $(document).keydown(function(e){
-    if (e.which == 38) {
+    if (e.which == fd) {
         manMove()
       return false;
     };
@@ -50,6 +51,7 @@ $(document).keydown(function(e){
     if (e.which == space) {
       setTimeout(myFunction, gameTime);
       space = 0;
+      fd = 38;
       $(".levelH1").text("LEVEL: 1");
       return false;
     };
@@ -96,33 +98,3 @@ var interval = setInterval(function(){
   };
 },50);
 
-
-
-
-
-
-// setInterval(function(){
-//   var n = Math.floor(Math.random()*13+2);
-//   var m = Math.floor(Math.random()*9+1);
-//   while(temp === n){
-//     n = Math.floor(Math.random()*13+2);
-//   };
-//   $(".game").append("<div class='car car" + carNo +"' style='grid-column-start:"+carStartloc+"; grid-column-end: "+carEndLoc+"; grid-row-start: "+n+";' allign = 'center'><img class='car' src='images/car"+m+".jpg'></div>")
-//   cars.push("car"+carNo)
-//   carNo += 1;
-//   carStartloc -= 1;
-//   carEndLoc = carStartloc + 2;
-//   for (var i=0; i < cars.length; i++){
-//       $("."+ cars[i]).css("grid-column-start", carStartloc + i);
-//       $("."+ cars[i]).css("grid-column-end", carEndLoc + i);
-//   };
-//   temp = n;
-//
-//   for (var i=0; i < cars.length; i++){
-//     if ( $("."+ cars[i]).css('grid-column-start') == "1"){
-//         $("."+ cars[i]).remove();
-//       };
-//     };
-//
-//
-// },500);
